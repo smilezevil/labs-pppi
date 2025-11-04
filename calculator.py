@@ -8,18 +8,14 @@ from tkinter import messagebox
 from tkinter import ttk
 from tkinter.ttk import Separator, Style, Button as TtkButton, Label as TtkLabel, Frame as TtkFrame
 
-# --- Назви файлів ---
 INPUT_FILE = "Input data.txt"
 OUTPUT_FILE = "Output data.txt"
 SESSION_LOG_FILE = "Session log.txt"
 
+Doroftei
 
-# =================================================================
-# ЛОГІКА ЛОГУВАННЯ ТА ОБРОБКА ДАНИХ (Функціональна частина)
-# =================================================================
-
+main
 def log_action(action_text, is_start=False, is_end=False):
-    """Журналювання подій. Файл очищується при is_start=True."""
 
     mode = 'w' if is_start else 'a'
 
@@ -48,7 +44,7 @@ def log_action(action_text, is_start=False, is_end=False):
 
 
 def import_data_from_file():
-    """Імпортує вхідні дані. Обробляє помилки."""
+
     log_action("обрано «Імпортувати вхідні дані»")
 
     try:
@@ -75,9 +71,13 @@ def import_data_from_file():
 
 
 def perform_calculation(param1, param2, operation):
+ Laptiuk
     """Виконує арифметичну дію (if..elif) та обробляє ZeroDivisionError."""
     log_action(f"Обрано арифметичну операцію «{operation}»")
     log_action("Обрано «Обчислити вираз»")
+    log_action(f"обрано арифметичну операцію «{operation}»")
+    log_action("обрано «Обчислити вираз»")
+    main
 
     result = None
 
@@ -100,7 +100,6 @@ def perform_calculation(param1, param2, operation):
 
 
 def export_result(param1, param2, operation, result):
-    """Записує результат у файл Output data.txt."""
     output_line = f"{param1} {operation} {param2} Результат: {result}"
 
     try:
@@ -113,14 +112,12 @@ def export_result(param1, param2, operation, result):
     return output_line
 
 
-# =================================================================
-# GUI TKINTER (ПОКРАЩЕНИЙ ВИГЛЯД)
-# =================================================================
-
+ Doroftei
+main
 class CalculatorApp:
     def __init__(self, master):
         self.master = master
-        master.title("ЛР №4, Завдання 3")
+        master.title("ЛР №4, Завдання 33")
         master.geometry("550x500")
 
         # Налаштування стилів ttk для кращого вигляду на macOS
@@ -139,15 +136,15 @@ class CalculatorApp:
         self.data_display = tk.StringVar(value="Параметр 1: -\nПараметр 2: -")
         self.result_display = tk.StringVar(value="Очікування обчислення...")
 
-        # ------------------- Дизайн GUI -------------------
-        # Використовуємо ttk.Frame
+
+
         main_frame = TtkFrame(master, padding="15 15 15 15")
         main_frame.pack(fill='both', expand=True)
 
-        # Секція 1: Імпорт та Дані (Використовуємо ttk.Label)
+
         TtkLabel(main_frame, text="ВХІДНІ ДАНІ", style='Header.TLabel').pack(pady=10)
 
-        # Використовуємо ttk.Button
+
         TtkButton(main_frame, text="Імпортувати вхідні дані", command=self.handle_import, style='Big.TButton').pack(
             fill='x', pady=8)
 
@@ -156,13 +153,13 @@ class CalculatorApp:
 
         Separator(main_frame, orient='horizontal').pack(fill='x', pady=10)
 
-        # Секція 2: Вибір Операції
+
         TtkLabel(main_frame, text="Оберіть арифметичну дію (Radiobutton):", style='Header.TLabel').pack(pady=10)
 
         op_frame = TtkFrame(main_frame)
         op_frame.pack(pady=10)
 
-        # Radiobutton для вибору операції
+
         operations = ['+', '-', '*', '/', '^']
         for op in operations:
             tk.Radiobutton(op_frame, text=op, variable=self.current_operation, value=op,
@@ -184,7 +181,6 @@ class CalculatorApp:
 
         master.protocol("WM_DELETE_WINDOW", self.on_closing)
 
-    # ------------------- Обробники кнопок (без змін) -------------------
 
     def handle_import(self):
         try:
