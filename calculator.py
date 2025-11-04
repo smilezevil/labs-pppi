@@ -12,6 +12,9 @@ INPUT_FILE = "Input data.txt"
 OUTPUT_FILE = "Output data.txt"
 SESSION_LOG_FILE = "Session log.txt"
 
+Doroftei
+
+main
 def log_action(action_text, is_start=False, is_end=False):
 
     mode = 'w' if is_start else 'a'
@@ -104,11 +107,12 @@ def export_result(param1, param2, operation, result):
     return output_line
 
 
-
+ Doroftei
+main
 class CalculatorApp:
     def __init__(self, master):
         self.master = master
-        master.title("ЛР №4, Завдання 3")
+        master.title("ЛР №4, Завдання 33")
         master.geometry("550x500")
 
         # Налаштування стилів ttk для кращого вигляду на macOS
