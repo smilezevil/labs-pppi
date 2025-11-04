@@ -71,8 +71,13 @@ def import_data_from_file():
 
 
 def perform_calculation(param1, param2, operation):
+ Laptiuk
+    """Виконує арифметичну дію (if..elif) та обробляє ZeroDivisionError."""
+    log_action(f"Обрано арифметичну операцію «{operation}»")
+    log_action("Обрано «Обчислити вираз»")
     log_action(f"обрано арифметичну операцію «{operation}»")
     log_action("обрано «Обчислити вираз»")
+    main
 
     result = None
 
@@ -121,7 +126,7 @@ class CalculatorApp:
         style.configure('Header.TLabel', font=('Arial', 14, 'bold'), foreground='#333333')
         style.configure('Big.TButton', font=('Arial', 12, 'bold'))
 
-        log_action("додаток запущено", is_start=True)
+        log_action("Додаток запущено", is_start=True)
 
         self.param1 = None
         self.param2 = None
