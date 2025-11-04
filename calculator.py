@@ -8,18 +8,12 @@ from tkinter import messagebox
 from tkinter import ttk
 from tkinter.ttk import Separator, Style, Button as TtkButton, Label as TtkLabel, Frame as TtkFrame
 
-# --- Назви файлів ---
 INPUT_FILE = "Input data.txt"
 OUTPUT_FILE = "Output data.txt"
 SESSION_LOG_FILE = "Session log.txt"
 
 
-# =================================================================
-# ЛОГІКА ЛОГУВАННЯ ТА ОБРОБКА ДАНИХ (Функціональна частина)
-# =================================================================
-
 def log_action(action_text, is_start=False, is_end=False):
-    """Журналювання подій. Файл очищується при is_start=True."""
 
     mode = 'w' if is_start else 'a'
 
@@ -48,7 +42,7 @@ def log_action(action_text, is_start=False, is_end=False):
 
 
 def import_data_from_file():
-    """Імпортує вхідні дані. Обробляє помилки."""
+
     log_action("обрано «Імпортувати вхідні дані»")
 
     try:
@@ -75,7 +69,6 @@ def import_data_from_file():
 
 
 def perform_calculation(param1, param2, operation):
-    """Виконує арифметичну дію (if..elif) та обробляє ZeroDivisionError."""
     log_action(f"обрано арифметичну операцію «{operation}»")
     log_action("обрано «Обчислити вираз»")
 
@@ -113,14 +106,10 @@ def export_result(param1, param2, operation, result):
     return output_line
 
 
-# =================================================================
-# GUI TKINTER (ПОКРАЩЕНИЙ ВИГЛЯД)
-# =================================================================
-
 class CalculatorApp:
     def __init__(self, master):
         self.master = master
-        master.title("ЛР №4, Завдання 3")
+        master.title("ЛР №4, Завдання 33")
         master.geometry("550x500")
 
         # Налаштування стилів ttk для кращого вигляду на macOS
